@@ -1,0 +1,13 @@
+service: api-gw-serverless
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+    - http:
+        path: foo/bar/{p}
+        method: get
